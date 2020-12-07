@@ -10,13 +10,13 @@ namespace super_comment_viewer.model.tcp
         /// <summary>
         /// コメントサーバーに接続を試みる
         /// </summary>
-        protected Task StartConnectServerAsync();
+        public Task<bool> StartConnectServerAsync(string webSocketUrl);
 
         /// <summary>
         /// コメントを非同期に取得する
         /// </summary>
         /// <returns>コメント</returns>
-        public Task<string> ReceiveCommentAsync();
+        public IAsyncEnumerable<string> ReceiveCommentAsync();
 
         /// <summary>
         /// サーバー接続を終了する

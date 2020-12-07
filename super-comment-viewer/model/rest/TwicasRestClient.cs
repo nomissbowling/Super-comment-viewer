@@ -18,7 +18,7 @@ namespace super_comment_viewer.model.rest
         {
             var response = await RunPostWebSocektUrl();
             var parser = new JsonParser(response);
-            return parser.convertToWebSocketUrl().url;
+            return parser.ConvertToWebSocketUrl().url;
         }
 
         private async Task<string> RunPostWebSocektUrl()
@@ -29,8 +29,6 @@ namespace super_comment_viewer.model.rest
             };
 
             return await client.PostWrapAsync(LiveApi.GET_WEBSOCKET_URL_API, body);
-            
-
         }
 
     }

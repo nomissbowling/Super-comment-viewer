@@ -1,4 +1,5 @@
-﻿using super_comment_viewer.model.json.jsonmodel;
+﻿
+using super_comment_viewer.model.json.jsonmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,14 @@ namespace super_comment_viewer.model
 
         }
 
-        public WebSocektUrlModel convertToWebSocketUrl()
+        public WebSocektUrlModel ConvertToWebSocketUrl()
         {
             return JsonSerializer.Deserialize<WebSocektUrlModel>(_json);
+        }
+
+        public List<TwicasCommentModel> ConvertToTwicasCommentModel()
+        {
+            return JsonSerializer.Deserialize<List<TwicasCommentModel>>(_json);
         }
     }
 }
